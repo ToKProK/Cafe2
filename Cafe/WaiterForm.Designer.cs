@@ -1,6 +1,6 @@
 ﻿namespace Cafe
 {
-    partial class AdminForm
+    partial class WaiterForm
     {
         /// <summary>
         /// Required designer variable.
@@ -46,23 +46,24 @@
             this.button_Exit.Location = new System.Drawing.Point(647, 389);
             this.button_Exit.Name = "button_Exit";
             this.button_Exit.Size = new System.Drawing.Size(141, 49);
-            this.button_Exit.TabIndex = 1;
+            this.button_Exit.TabIndex = 2;
             this.button_Exit.Text = "Выход";
             this.button_Exit.UseVisualStyleBackColor = true;
             this.button_Exit.Click += new System.EventHandler(this.button_Exit_Click);
             // 
-            // AdminForm
+            // WaiterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.button_Exit);
             this.Controls.Add(this.label1);
-            this.Name = "AdminForm";
+            this.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.Name = "WaiterForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Администратор";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AdminForm_FormClosing);
-            this.Load += new System.EventHandler(this.AdminForm_Load);
+            this.Text = "Официант";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.WaiterForm_FormClosing);
+            this.Load += new System.EventHandler(this.WaiterForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

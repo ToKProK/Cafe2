@@ -57,20 +57,35 @@
       <DependentUpon>AdminForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Authorization.cs" />
-    <Compile Include="DBConnection.cs" />
-    <Compile Include="Authorizate.cs">
+    <Compile Include="CookForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Authorizate.Designer.cs">
-      <DependentUpon>Authorizate.cs</DependentUpon>
+    <Compile Include="CookForm.Designer.cs">
+      <DependentUpon>CookForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DBConnection.cs" />
+    <Compile Include="Authorizate_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Authorizate_Form.Designer.cs">
+      <DependentUpon>Authorizate_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WaiterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WaiterForm.Designer.cs">
+      <DependentUpon>WaiterForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Authorizate.resx">
-      <DependentUpon>Authorizate.cs</DependentUpon>
+    <EmbeddedResource Include="Authorizate_Form.resx">
+      <DependentUpon>Authorizate_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CookForm.resx">
+      <DependentUpon>CookForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -81,6 +96,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="WaiterForm.resx">
+      <DependentUpon>WaiterForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

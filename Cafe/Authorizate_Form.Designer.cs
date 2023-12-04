@@ -1,6 +1,6 @@
 ﻿namespace Cafe
 {
-    partial class Authorizate
+    partial class Authorizate_Form
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -95,6 +95,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "Authorizate";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Авторизация";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Authorizate_FormClosing);
             this.Load += new System.EventHandler(this.Authorizate_Load);

@@ -10,19 +10,19 @@ using System.Windows.Forms;
 
 namespace Cafe
 {
-    public partial class AdminForm : Form
+    public partial class WaiterForm : Form
     {
-        public AdminForm()
+        public WaiterForm()
         {
             InitializeComponent();
         }
 
-        private void AdminForm_FormClosing(object sender, FormClosingEventArgs e)
+        private void WaiterForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
         }
 
-        private void AdminForm_Load(object sender, EventArgs e)
+        private void WaiterForm_Load(object sender, EventArgs e)
         {
             label1.Text = $"Добро пожаловать {Authorization.Surname} {Authorization.Name} {Authorization.Patronymic}";
         }

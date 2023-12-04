@@ -10,10 +10,11 @@ namespace Cafe
 {
     internal class DBConnection
     {
-        static string DBConnect = "server=localhost; user=root; password=1234; database=cafe_db";
+        static string DBConnect = "server=localhost; user=root; password=1234; database=cafe2_db";
         static public MySqlDataAdapter MySqlDataAdapter;
         static MySqlConnection Connection;
         static public MySqlCommand MsCommand;
+        
 
         public static bool ConnectorDB()
         {

@@ -16,7 +16,7 @@ namespace Cafe
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Authorizate());
+            Application.Run(new Authorizate_Form());
         }
     }
 }

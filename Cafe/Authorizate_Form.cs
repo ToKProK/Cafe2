@@ -10,15 +10,12 @@ using System.Windows.Forms;
 
 namespace Cafe
 {
-    public partial class Authorizate : Form
+    public partial class Authorizate_Form : Form
     {
-        public Authorizate()
+        public Authorizate_Form()
         {
             InitializeComponent();
         }
-
-        static public string Who_is;
-        static public string loginUser;
 
         private void Authorizate_Load(object sender, EventArgs e)
         {
@@ -40,15 +37,22 @@ namespace Cafe
                         }
                     case "Администратор":
                         {
-                            loginUser = textBox1.Text;
-                            Who_is = "Администратор";
-                            Authorization.User = loginUser;
-
-                            string surname = Authorization.AuthorizationSurname(loginUser);
-                            Authorization.Surname = surname;
-                            MessageBox.Show(surname);
                             this.Hide();
                             AdminForm form = new AdminForm();
+                            form.Show();
+                            break;
+                        }
+                    case "Повар":
+                        {
+                            this.Hide();
+                            CookForm form = new CookForm();
+                            form.Show(); 
+                            break;
+                        }
+                    case "Официант":
+                        {
+                            this.Hide();
+                            WaiterForm form = new WaiterForm();
                             form.Show();
                             break;
                         }
