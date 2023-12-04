@@ -37,6 +37,7 @@
             this.patronymic = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name_role = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name_status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button_Exit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -120,11 +121,23 @@
             this.name_status.Name = "name_status";
             this.name_status.Width = 150;
             // 
+            // button_Exit
+            // 
+            this.button_Exit.Location = new System.Drawing.Point(1231, 627);
+            this.button_Exit.Margin = new System.Windows.Forms.Padding(6);
+            this.button_Exit.Name = "button_Exit";
+            this.button_Exit.Size = new System.Drawing.Size(151, 48);
+            this.button_Exit.TabIndex = 2;
+            this.button_Exit.Text = "Выход";
+            this.button_Exit.UseVisualStyleBackColor = true;
+            this.button_Exit.Click += new System.EventHandler(this.button_Exit_Click);
+            // 
             // AccountForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1397, 690);
+            this.Controls.Add(this.button_Exit);
             this.Controls.Add(this.dataGridView1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
@@ -148,5 +161,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn patronymic;
         private System.Windows.Forms.DataGridViewTextBoxColumn name_role;
         private System.Windows.Forms.DataGridViewTextBoxColumn name_status;
+        private System.Windows.Forms.Button button_Exit;
     }
 }

@@ -27,5 +27,12 @@ namespace Cafe
             AccountClass.GetAccount();
             dataGridView1.DataSource = AccountClass.dtAccount;
         }
+
+        private void button_Exit_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AdminForm form = new AdminForm();
+            form.Show();
+        }
     }
 }
