@@ -2,16 +2,22 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Common;
+using System.Data.Odbc;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using System.Xml.Linq;
 
 namespace Cafe
 {
     internal class AccountClass : DBConnection
     {
+        static public DataTable dtStatus = new DataTable();
+        static public DataTable dtRole = new DataTable();
         public static DataTable dtAccount = new DataTable();
+        public static bool signal = false;
 
         static public string id, login, password, surname, name, patronymic, role, status;
 
@@ -37,6 +43,40 @@ namespace Cafe
             dtAccount.Clear();
             MySqlDataAdapter.SelectCommand = MsCommand;
             MySqlDataAdapter.Fill(dtAccount);
+        }
+        static public void GetStatus()
+        {
+            MsCommand.CommandText = $"SELECT * FROM sp_status";
+            dtStatus.Clear();
+            MySqlDataAdapter.SelectCommand = MsCommand;
+            MySqlDataAdapter.Fill(dtStatus);
+        }
+        static public void GetRole()
+        {
+            MsCommand.CommandText = $"SELECT * FROM sp_role";
+            dtRole.Clear();
+            MySqlDataAdapter.SelectCommand = MsCommand;
+            MySqlDataAdapter.Fill(dtRole);
+        }
+        static public bool AddAccount(string login, string password, string surname, string name, string patronymic, int id_role, int id_status)
+        {
+            try
+            {
+                MsCommand.CommandText = $"INSERT INTO accounts VALUES(null, '{login}', '{password}', '{surname}', '{name}', '{patronymic}', '{id_role}', '{id_status}')";
+                if (MsCommand.ExecuteNonQuery() > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка добавления пользователя в базу данных" + ex);
+                return false;
+            } 
         }
     }
 }

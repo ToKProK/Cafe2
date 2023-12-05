@@ -38,6 +38,7 @@
             this.name_role = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name_status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button_Exit = new System.Windows.Forms.Button();
+            this.button_addAccount = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,67 +59,84 @@
             this.name_role,
             this.name_status});
             this.dataGridView1.Location = new System.Drawing.Point(24, 22);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(6);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(1343, 474);
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.Size = new System.Drawing.Size(1343, 426);
             this.dataGridView1.TabIndex = 0;
             // 
             // id
             // 
             this.id.DataPropertyName = "id";
             this.id.HeaderText = "id";
+            this.id.MinimumWidth = 6;
             this.id.Name = "id";
+            this.id.ReadOnly = true;
             this.id.Visible = false;
-            this.id.Width = 5;
+            this.id.Width = 6;
             // 
             // login
             // 
             this.login.DataPropertyName = "login";
             this.login.HeaderText = "Логин";
+            this.login.MinimumWidth = 6;
             this.login.Name = "login";
+            this.login.ReadOnly = true;
             this.login.Width = 200;
             // 
             // password
             // 
             this.password.DataPropertyName = "password";
             this.password.HeaderText = "Пароль";
+            this.password.MinimumWidth = 6;
             this.password.Name = "password";
+            this.password.ReadOnly = true;
             this.password.Width = 200;
             // 
             // surname
             // 
             this.surname.DataPropertyName = "surname";
             this.surname.HeaderText = "Фамилия";
+            this.surname.MinimumWidth = 6;
             this.surname.Name = "surname";
+            this.surname.ReadOnly = true;
             this.surname.Width = 200;
             // 
             // name
             // 
             this.name.DataPropertyName = "name";
             this.name.HeaderText = "Имя";
+            this.name.MinimumWidth = 6;
             this.name.Name = "name";
+            this.name.ReadOnly = true;
             this.name.Width = 150;
             // 
             // patronymic
             // 
             this.patronymic.DataPropertyName = "patronymic";
             this.patronymic.HeaderText = "Отчество";
+            this.patronymic.MinimumWidth = 6;
             this.patronymic.Name = "patronymic";
+            this.patronymic.ReadOnly = true;
             this.patronymic.Width = 250;
             // 
             // name_role
             // 
             this.name_role.DataPropertyName = "name_role";
             this.name_role.HeaderText = "Должность";
+            this.name_role.MinimumWidth = 6;
             this.name_role.Name = "name_role";
+            this.name_role.ReadOnly = true;
             this.name_role.Width = 150;
             // 
             // name_status
             // 
             this.name_status.DataPropertyName = "name_status";
             this.name_status.HeaderText = "Статус";
+            this.name_status.MinimumWidth = 6;
             this.name_status.Name = "name_status";
+            this.name_status.ReadOnly = true;
             this.name_status.Width = 150;
             // 
             // button_Exit
@@ -132,15 +150,27 @@
             this.button_Exit.UseVisualStyleBackColor = true;
             this.button_Exit.Click += new System.EventHandler(this.button_Exit_Click);
             // 
+            // button_addAccount
+            // 
+            this.button_addAccount.Location = new System.Drawing.Point(24, 460);
+            this.button_addAccount.Margin = new System.Windows.Forms.Padding(6);
+            this.button_addAccount.Name = "button_addAccount";
+            this.button_addAccount.Size = new System.Drawing.Size(217, 90);
+            this.button_addAccount.TabIndex = 3;
+            this.button_addAccount.Text = "Добавить пользователя";
+            this.button_addAccount.UseVisualStyleBackColor = true;
+            this.button_addAccount.Click += new System.EventHandler(this.button_addAccount_Click);
+            // 
             // AccountForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1397, 690);
+            this.ClientSize = new System.Drawing.Size(1397, 701);
+            this.Controls.Add(this.button_addAccount);
             this.Controls.Add(this.button_Exit);
             this.Controls.Add(this.dataGridView1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "AccountForm";
             this.Text = "Панель управления пользователями";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AccountForm_FormClosing);
@@ -151,8 +181,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn login;
         private System.Windows.Forms.DataGridViewTextBoxColumn password;
@@ -162,5 +190,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn name_role;
         private System.Windows.Forms.DataGridViewTextBoxColumn name_status;
         private System.Windows.Forms.Button button_Exit;
+        private System.Windows.Forms.Button button_addAccount;
+        internal System.Windows.Forms.DataGridView dataGridView1;
     }
 }

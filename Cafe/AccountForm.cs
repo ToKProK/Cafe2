@@ -17,6 +17,9 @@ namespace Cafe
             InitializeComponent();
         }
 
+
+
+
         private void AccountForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
@@ -33,6 +36,15 @@ namespace Cafe
             this.Hide();
             AdminForm form = new AdminForm();
             form.Show();
+
+        }
+
+        private void button_addAccount_Click(object sender, EventArgs e)
+        {
+            AccountAddModalForm form = new AccountAddModalForm();
+            form.ShowDialog();
+            AccountClass.GetAccount();
+            dataGridView1.DataSource = AccountClass.dtAccount;
         }
     }
 }
