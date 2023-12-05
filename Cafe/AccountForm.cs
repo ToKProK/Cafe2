@@ -17,7 +17,11 @@ namespace Cafe
             InitializeComponent();
         }
 
-
+        public void DataUpdate()
+        {
+            AccountClass.GetAccount();
+            dataGridView1.DataSource = AccountClass.dtAccount;
+        }
 
 
         private void AccountForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -27,8 +31,7 @@ namespace Cafe
 
         private void AccountForm_Load(object sender, EventArgs e)
         {
-            AccountClass.GetAccount();
-            dataGridView1.DataSource = AccountClass.dtAccount;
+            DataUpdate();
         }
 
         private void button_Exit_Click(object sender, EventArgs e)
@@ -36,15 +39,14 @@ namespace Cafe
             this.Hide();
             AdminForm form = new AdminForm();
             form.Show();
-
+            DataUpdate();
         }
 
         private void button_addAccount_Click(object sender, EventArgs e)
         {
             AccountAddModalForm form = new AccountAddModalForm();
             form.ShowDialog();
-            AccountClass.GetAccount();
-            dataGridView1.DataSource = AccountClass.dtAccount;
+            
         }
     }
 }
