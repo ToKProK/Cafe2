@@ -31,6 +31,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button_Exit = new System.Windows.Forms.Button();
             this.button_account = new System.Windows.Forms.Button();
+            this.button_Shift = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -46,7 +47,7 @@
             // button_Exit
             // 
             this.button_Exit.Location = new System.Drawing.Point(867, 519);
-            this.button_Exit.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.button_Exit.Margin = new System.Windows.Forms.Padding(6);
             this.button_Exit.Name = "button_Exit";
             this.button_Exit.Size = new System.Drawing.Size(151, 48);
             this.button_Exit.TabIndex = 1;
@@ -56,25 +57,37 @@
             // 
             // button_account
             // 
-            this.button_account.Location = new System.Drawing.Point(15, 55);
-            this.button_account.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.button_account.Location = new System.Drawing.Point(15, 68);
+            this.button_account.Margin = new System.Windows.Forms.Padding(6);
             this.button_account.Name = "button_account";
-            this.button_account.Size = new System.Drawing.Size(319, 94);
+            this.button_account.Size = new System.Drawing.Size(246, 70);
             this.button_account.TabIndex = 2;
             this.button_account.Text = "Пользователи";
             this.button_account.UseVisualStyleBackColor = true;
             this.button_account.Click += new System.EventHandler(this.button_account_Click);
+            // 
+            // button_Shift
+            // 
+            this.button_Shift.Location = new System.Drawing.Point(15, 159);
+            this.button_Shift.Margin = new System.Windows.Forms.Padding(6);
+            this.button_Shift.Name = "button_Shift";
+            this.button_Shift.Size = new System.Drawing.Size(246, 70);
+            this.button_Shift.TabIndex = 3;
+            this.button_Shift.Text = "Смены";
+            this.button_Shift.UseVisualStyleBackColor = true;
+            this.button_Shift.Click += new System.EventHandler(this.button_Shift_Click);
             // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1033, 582);
+            this.Controls.Add(this.button_Shift);
             this.Controls.Add(this.button_account);
             this.Controls.Add(this.button_Exit);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "AdminForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Администратор";
@@ -90,5 +103,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button_Exit;
         private System.Windows.Forms.Button button_account;
+        private System.Windows.Forms.Button button_Shift;
     }
 }

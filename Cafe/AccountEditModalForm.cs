@@ -88,7 +88,7 @@ namespace Cafe
                 }
                 else
                 {
-                    MessageBox.Show("Пользователь с такми логином уже существет.");
+                    MessageBox.Show("Пользователь с такми логином уже существет.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

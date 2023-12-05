@@ -22,7 +22,8 @@ namespace Cafe
 
         static public void GetAccount()
         {
-            MsCommand.CommandText = $"SELECT id, login, password, surname, name, patronymic, sp_role.name_role,sp_role.id_role, sp_status.name_status, sp_status.id_status FROM accounts " +
+            MsCommand.CommandText = $"SELECT id, login, password, surname, name, patronymic, sp_role.name_role,sp_role.id_role," +
+                                    $" sp_status.name_status, sp_status.id_status FROM accounts " +
                                     $"INNER JOIN sp_role ON sp_role.id_role = accounts.id_role " +
                                     $"INNER JOIN sp_status ON sp_status.id_status=accounts.id_status ";
 

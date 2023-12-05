@@ -40,5 +40,12 @@ namespace Cafe
             AccountForm form = new AccountForm();
             form.Show();
         }
+
+        private void button_Shift_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ShiftForm form = new ShiftForm();
+            form.Show();
+        }
     }
 }
