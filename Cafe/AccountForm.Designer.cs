@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button_Exit = new System.Windows.Forms.Button();
+            this.button_addAccount = new System.Windows.Forms.Button();
+            this.button_EditAccount = new System.Windows.Forms.Button();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.login = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.password = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -36,9 +39,10 @@
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.patronymic = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name_role = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_role = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name_status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button_Exit = new System.Windows.Forms.Button();
-            this.button_addAccount = new System.Windows.Forms.Button();
+            this.id_status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button_DeleteAccount = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,7 +61,9 @@
             this.name,
             this.patronymic,
             this.name_role,
-            this.name_status});
+            this.id_role,
+            this.name_status,
+            this.id_status});
             this.dataGridView1.Location = new System.Drawing.Point(24, 22);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(6);
             this.dataGridView1.Name = "dataGridView1";
@@ -65,6 +71,39 @@
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(1343, 426);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // button_Exit
+            // 
+            this.button_Exit.Location = new System.Drawing.Point(1231, 627);
+            this.button_Exit.Margin = new System.Windows.Forms.Padding(6);
+            this.button_Exit.Name = "button_Exit";
+            this.button_Exit.Size = new System.Drawing.Size(151, 48);
+            this.button_Exit.TabIndex = 2;
+            this.button_Exit.Text = "Выход";
+            this.button_Exit.UseVisualStyleBackColor = true;
+            this.button_Exit.Click += new System.EventHandler(this.button_Exit_Click);
+            // 
+            // button_addAccount
+            // 
+            this.button_addAccount.Location = new System.Drawing.Point(24, 460);
+            this.button_addAccount.Margin = new System.Windows.Forms.Padding(6);
+            this.button_addAccount.Name = "button_addAccount";
+            this.button_addAccount.Size = new System.Drawing.Size(256, 102);
+            this.button_addAccount.TabIndex = 3;
+            this.button_addAccount.Text = "Добавить пользователя";
+            this.button_addAccount.UseVisualStyleBackColor = true;
+            this.button_addAccount.Click += new System.EventHandler(this.button_addAccount_Click);
+            // 
+            // button_EditAccount
+            // 
+            this.button_EditAccount.Location = new System.Drawing.Point(296, 460);
+            this.button_EditAccount.Margin = new System.Windows.Forms.Padding(6);
+            this.button_EditAccount.Name = "button_EditAccount";
+            this.button_EditAccount.Size = new System.Drawing.Size(256, 102);
+            this.button_EditAccount.TabIndex = 4;
+            this.button_EditAccount.Text = "Изменить данные о пользователе";
+            this.button_EditAccount.UseVisualStyleBackColor = true;
+            this.button_EditAccount.Click += new System.EventHandler(this.button_EditAccount_Click);
             // 
             // id
             // 
@@ -130,6 +169,16 @@
             this.name_role.ReadOnly = true;
             this.name_role.Width = 150;
             // 
+            // id_role
+            // 
+            this.id_role.DataPropertyName = "id_role";
+            this.id_role.HeaderText = "id_role";
+            this.id_role.MinimumWidth = 6;
+            this.id_role.Name = "id_role";
+            this.id_role.ReadOnly = true;
+            this.id_role.Visible = false;
+            this.id_role.Width = 125;
+            // 
             // name_status
             // 
             this.name_status.DataPropertyName = "name_status";
@@ -139,33 +188,34 @@
             this.name_status.ReadOnly = true;
             this.name_status.Width = 150;
             // 
-            // button_Exit
+            // id_status
             // 
-            this.button_Exit.Location = new System.Drawing.Point(1231, 627);
-            this.button_Exit.Margin = new System.Windows.Forms.Padding(6);
-            this.button_Exit.Name = "button_Exit";
-            this.button_Exit.Size = new System.Drawing.Size(151, 48);
-            this.button_Exit.TabIndex = 2;
-            this.button_Exit.Text = "Выход";
-            this.button_Exit.UseVisualStyleBackColor = true;
-            this.button_Exit.Click += new System.EventHandler(this.button_Exit_Click);
+            this.id_status.DataPropertyName = "id_status";
+            this.id_status.HeaderText = "id_status";
+            this.id_status.MinimumWidth = 6;
+            this.id_status.Name = "id_status";
+            this.id_status.ReadOnly = true;
+            this.id_status.Visible = false;
+            this.id_status.Width = 125;
             // 
-            // button_addAccount
+            // button_DeleteAccount
             // 
-            this.button_addAccount.Location = new System.Drawing.Point(24, 460);
-            this.button_addAccount.Margin = new System.Windows.Forms.Padding(6);
-            this.button_addAccount.Name = "button_addAccount";
-            this.button_addAccount.Size = new System.Drawing.Size(217, 90);
-            this.button_addAccount.TabIndex = 3;
-            this.button_addAccount.Text = "Добавить пользователя";
-            this.button_addAccount.UseVisualStyleBackColor = true;
-            this.button_addAccount.Click += new System.EventHandler(this.button_addAccount_Click);
+            this.button_DeleteAccount.Location = new System.Drawing.Point(564, 460);
+            this.button_DeleteAccount.Margin = new System.Windows.Forms.Padding(6);
+            this.button_DeleteAccount.Name = "button_DeleteAccount";
+            this.button_DeleteAccount.Size = new System.Drawing.Size(256, 102);
+            this.button_DeleteAccount.TabIndex = 5;
+            this.button_DeleteAccount.Text = "Удалить выбранного пользователя";
+            this.button_DeleteAccount.UseVisualStyleBackColor = true;
+            this.button_DeleteAccount.Click += new System.EventHandler(this.button_DeleteAccount_Click);
             // 
             // AccountForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1397, 701);
+            this.Controls.Add(this.button_DeleteAccount);
+            this.Controls.Add(this.button_EditAccount);
             this.Controls.Add(this.button_addAccount);
             this.Controls.Add(this.button_Exit);
             this.Controls.Add(this.dataGridView1);
@@ -181,6 +231,10 @@
         }
 
         #endregion
+        private System.Windows.Forms.Button button_Exit;
+        private System.Windows.Forms.Button button_addAccount;
+        internal System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button button_EditAccount;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn login;
         private System.Windows.Forms.DataGridViewTextBoxColumn password;
@@ -188,9 +242,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn patronymic;
         private System.Windows.Forms.DataGridViewTextBoxColumn name_role;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_role;
         private System.Windows.Forms.DataGridViewTextBoxColumn name_status;
-        private System.Windows.Forms.Button button_Exit;
-        private System.Windows.Forms.Button button_addAccount;
-        internal System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_status;
+        private System.Windows.Forms.Button button_DeleteAccount;
     }
 }

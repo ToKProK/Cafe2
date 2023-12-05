@@ -17,13 +17,12 @@ namespace Cafe
         static public DataTable dtStatus = new DataTable();
         static public DataTable dtRole = new DataTable();
         public static DataTable dtAccount = new DataTable();
-        public static bool signal = false;
 
         static public string id, login, password, surname, name, patronymic, role, status;
 
         static public void GetAccount()
         {
-            MsCommand.CommandText = $"SELECT id, login, password, surname, name, patronymic, sp_role.name_role, sp_status.name_status FROM accounts " +
+            MsCommand.CommandText = $"SELECT id, login, password, surname, name, patronymic, sp_role.name_role,sp_role.id_role, sp_status.name_status, sp_status.id_status FROM accounts " +
                                     $"INNER JOIN sp_role ON sp_role.id_role = accounts.id_role " +
                                     $"INNER JOIN sp_status ON sp_status.id_status=accounts.id_status ";
 
@@ -44,20 +43,7 @@ namespace Cafe
             MySqlDataAdapter.SelectCommand = MsCommand;
             MySqlDataAdapter.Fill(dtAccount);
         }
-        static public void GetStatus()
-        {
-            MsCommand.CommandText = $"SELECT * FROM sp_status";
-            dtStatus.Clear();
-            MySqlDataAdapter.SelectCommand = MsCommand;
-            MySqlDataAdapter.Fill(dtStatus);
-        }
-        static public void GetRole()
-        {
-            MsCommand.CommandText = $"SELECT * FROM sp_role";
-            dtRole.Clear();
-            MySqlDataAdapter.SelectCommand = MsCommand;
-            MySqlDataAdapter.Fill(dtRole);
-        }
+
         static public bool AddAccount(string login, string password, string surname, string name, string patronymic, int id_role, int id_status)
         {
             try
@@ -77,6 +63,67 @@ namespace Cafe
                 MessageBox.Show("Ошибка добавления пользователя в базу данных" + ex);
                 return false;
             } 
+
         }
+        static public bool EditAccount(int id,string login, string password, string surname, string name, string patronymic, int id_role, int id_status)
+        {
+            try
+            {
+                MsCommand.CommandText = $"UPDATE accounts SET login = '{login}', password = '{password}', " +
+                                        $"surname = '{surname}', name = '{name}', patronymic = '{patronymic}', " +
+                                        $"id_role = '{id_role}', id_status = '{id_status}' " +
+                                        $"WHERE id = '{id}'";
+                if (MsCommand.ExecuteNonQuery() > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch 
+            {
+                MessageBox.Show("Ошибка редактирования");
+                return false;
+            }
+            
+        }
+        static public void DeleteAccount(int id)
+        {
+            try
+            {
+                MsCommand.CommandText = $"DELETE FROM accounts WHERE id = {id}";
+                MsCommand.ExecuteNonQuery();
+            }
+            catch
+            {
+                MessageBox.Show("Ошибка при удалении!");
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+        static public void GetStatus()
+        {
+            MsCommand.CommandText = $"SELECT * FROM sp_status";
+            dtStatus.Clear();
+            MySqlDataAdapter.SelectCommand = MsCommand;
+            MySqlDataAdapter.Fill(dtStatus);
+        }
+        static public void GetRole()
+        {
+            MsCommand.CommandText = $"SELECT * FROM sp_role";
+            dtRole.Clear();
+            MySqlDataAdapter.SelectCommand = MsCommand;
+            MySqlDataAdapter.Fill(dtRole);
+            }
     }
 }

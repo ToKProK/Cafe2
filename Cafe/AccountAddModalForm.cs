@@ -45,7 +45,6 @@ namespace Cafe
                     {
                         MessageBox.Show("Аккаунт успешно добавлен!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                         this.Close();
-                        AccountClass.signal = true;
                     }
                 }
                 else
