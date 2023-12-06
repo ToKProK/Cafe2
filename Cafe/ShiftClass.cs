@@ -18,10 +18,10 @@ namespace Cafe
         DateTime endShift = new DateTime();
         //ФИО
         //Должность
-        
 
 
 
+        static public DataTable dtVShift = new DataTable();
         static public DataTable dtShift = new DataTable();
         static public DataTable dtPeople = new DataTable();
         static public void GetShift()
@@ -93,6 +93,16 @@ namespace Cafe
             {
                 return false;
             }
+        }
+
+
+
+        static public void GetView_shift()
+        {
+            MsCommand.CommandText = $"SELECT * FROM view_shift";
+            dtVShift.Clear();
+            MySqlDataAdapter.SelectCommand = MsCommand;
+            MySqlDataAdapter.Fill(dtVShift);
         }
     }
 }

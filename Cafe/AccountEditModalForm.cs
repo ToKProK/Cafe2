@@ -39,16 +39,16 @@ namespace Cafe
         }
 
 
-        private void LoadCombobox_Role()
-        {
-            //Загружаю все роли
-            AccountClass.GetRole();
-            comboBox_Role.DataSource = AccountClass.dtRole;
-            comboBox_Role.DisplayMember = "name_role";
-            comboBox_Role.ValueMember = "id_role";
-            //Выбираю нужную роль через Value
-            comboBox_Role.SelectedValue = id_role;
-        }
+            private void LoadCombobox_Role()
+            {
+                //Загружаю все роли
+                AccountClass.GetRole();
+                comboBox_Role.DataSource = AccountClass.dtRole;
+                comboBox_Role.DisplayMember = "name_role";
+                comboBox_Role.ValueMember = "id_role";
+                //Выбираю нужную роль через Value
+                comboBox_Role.SelectedValue = id_role;
+            }
         private void LoadCombobox_Status()
         {
             //Загружаю все роли

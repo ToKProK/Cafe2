@@ -59,6 +59,7 @@ namespace Cafe
         {
             ShiftAddForm form = new ShiftAddForm();
             form.ShowDialog();
+
         }
     }
 }
