@@ -40,6 +40,7 @@
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.patronymic = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name_role = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button_AddShift = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
@@ -60,6 +61,7 @@
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(843, 337);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
@@ -68,6 +70,7 @@
             // 
             this.id_shift.DataPropertyName = "id_shift";
             this.id_shift.HeaderText = "Номер смены";
+            this.id_shift.MinimumWidth = 6;
             this.id_shift.Name = "id_shift";
             this.id_shift.ReadOnly = true;
             this.id_shift.Width = 200;
@@ -76,6 +79,7 @@
             // 
             this.data_start.DataPropertyName = "data_start";
             this.data_start.HeaderText = "Начало смены";
+            this.data_start.MinimumWidth = 6;
             this.data_start.Name = "data_start";
             this.data_start.ReadOnly = true;
             this.data_start.Width = 200;
@@ -84,6 +88,7 @@
             // 
             this.data_end.DataPropertyName = "data_end";
             this.data_end.HeaderText = "Окончание смены";
+            this.data_end.MinimumWidth = 6;
             this.data_end.Name = "data_end";
             this.data_end.ReadOnly = true;
             this.data_end.Width = 200;
@@ -92,13 +97,14 @@
             // 
             this.name_vshift.DataPropertyName = "name_vshift";
             this.name_vshift.HeaderText = "Вид смены";
+            this.name_vshift.MinimumWidth = 6;
             this.name_vshift.Name = "name_vshift";
             this.name_vshift.ReadOnly = true;
             this.name_vshift.Width = 200;
             // 
             // button_Exit
             // 
-            this.button_Exit.Location = new System.Drawing.Point(1053, 640);
+            this.button_Exit.Location = new System.Drawing.Point(1053, 684);
             this.button_Exit.Name = "button_Exit";
             this.button_Exit.Size = new System.Drawing.Size(141, 49);
             this.button_Exit.TabIndex = 3;
@@ -123,6 +129,7 @@
             this.dataGridView2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.Size = new System.Drawing.Size(843, 356);
             this.dataGridView2.TabIndex = 4;
             // 
@@ -130,14 +137,17 @@
             // 
             this.id.DataPropertyName = "id";
             this.id.HeaderText = "id";
+            this.id.MinimumWidth = 6;
             this.id.Name = "id";
             this.id.ReadOnly = true;
             this.id.Visible = false;
+            this.id.Width = 125;
             // 
             // surname
             // 
             this.surname.DataPropertyName = "surname";
             this.surname.HeaderText = "Фамилия";
+            this.surname.MinimumWidth = 6;
             this.surname.Name = "surname";
             this.surname.ReadOnly = true;
             this.surname.Width = 200;
@@ -146,6 +156,7 @@
             // 
             this.name.DataPropertyName = "name";
             this.name.HeaderText = "Имя";
+            this.name.MinimumWidth = 6;
             this.name.Name = "name";
             this.name.ReadOnly = true;
             this.name.Width = 200;
@@ -154,6 +165,7 @@
             // 
             this.patronymic.DataPropertyName = "patronymic";
             this.patronymic.HeaderText = "Отчество";
+            this.patronymic.MinimumWidth = 6;
             this.patronymic.Name = "patronymic";
             this.patronymic.ReadOnly = true;
             this.patronymic.Width = 200;
@@ -162,22 +174,34 @@
             // 
             this.name_role.DataPropertyName = "name_role";
             this.name_role.HeaderText = "Должность";
+            this.name_role.MinimumWidth = 6;
             this.name_role.Name = "name_role";
             this.name_role.ReadOnly = true;
             this.name_role.Width = 200;
             // 
+            // button_AddShift
+            // 
+            this.button_AddShift.Location = new System.Drawing.Point(936, 33);
+            this.button_AddShift.Name = "button_AddShift";
+            this.button_AddShift.Size = new System.Drawing.Size(205, 86);
+            this.button_AddShift.TabIndex = 5;
+            this.button_AddShift.Text = "Добавить новую смену";
+            this.button_AddShift.UseVisualStyleBackColor = true;
+            this.button_AddShift.Click += new System.EventHandler(this.button_AddShift_Click);
+            // 
             // ShiftForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1206, 745);
+            this.Controls.Add(this.button_AddShift);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.button_Exit);
             this.Controls.Add(this.dataGridView1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "ShiftForm";
-            this.Text = "ShiftForm";
+            this.Text = "Смены";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ShiftForm_FormClosing);
             this.Load += new System.EventHandler(this.ShiftForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -200,5 +224,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn patronymic;
         private System.Windows.Forms.DataGridViewTextBoxColumn name_role;
+        private System.Windows.Forms.Button button_AddShift;
     }
 }

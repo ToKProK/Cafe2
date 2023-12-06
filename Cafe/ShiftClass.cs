@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -19,6 +20,8 @@ namespace Cafe
         //Должность
         
 
+
+
         static public DataTable dtShift = new DataTable();
         static public DataTable dtPeople = new DataTable();
         static public void GetShift()
@@ -37,15 +40,59 @@ namespace Cafe
                 MessageBox.Show("Ошибка при получении Смен");
             }
         }
-        static public void GetPeople() 
+        static public void GetPeople(int id_shift) 
         {
-            string sql2 = $"SELECT surname, name, patronymic, sp_role.name_role FROM accounts " +
-                          $"INNER JOIN working_people ON working_people.id_shift = shifts.id_shift " +
-                          $"INNER JOIN working_people ON accounts.id = working_people.id";
+            string sql2 = $"SELECT accounts.id, surname, name, patronymic, sp_role.name_role FROM accounts " +
+                          $"INNER JOIN sp_role ON sp_role.id_role = accounts.id_role " +
+                          $"INNER JOIN working_people ON working_people.id = accounts.id " +
+                          $"INNER JOIN shifts ON working_people.id_shift = shifts.id_shift " +
+                          $"WHERE shifts.id_shift = '{id_shift}'";
+            MsCommand.CommandText = sql2;
+
+
+            //MySqlDataReader read = MsCommand.ExecuteReader();
+            //read.Read();
+            //if (read.HasRows)
+            //{
+            //    string id = read[0].ToString();
+            //    string surname = read[1].ToString();
+            //    string name = read[2].ToString();
+            //    string patronymic = read[3].ToString();
+            //    string name_role = read[4].ToString();  
+            //}
+            //read.Close();
+
             MsCommand.CommandText = sql2;
             dtPeople.Clear();
             MySqlDataAdapter.SelectCommand = MsCommand;
             MySqlDataAdapter.Fill(dtPeople);
+
+
+        }
+        static public bool AddShift(int id_shift,string data_start, string data_end, int id_vshift, int[] array_id, int[] array_id_shift)
+        {
+            string sql = $"INSERT INTO shifts VALUES(null, '{data_start}', '{data_end}', '{id_vshift}');";
+            if (array_id.Length == array_id_shift.Length) //количество id смены и количество id сотрудников должно быть одинаково.
+            {
+                for (int i = 0; i < array_id.Length; i++)
+                {
+                    string sql_insert_personal = $"INSERT INTO working_people VALUES(null, '{array_id[i]}', '{array_id_shift[id_shift]}');";
+                    sql = sql + sql_insert_personal;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Ошибка в содрудниках смены.");
+            }
+            MsCommand.CommandText = sql;
+            if (MsCommand.ExecuteNonQuery() > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

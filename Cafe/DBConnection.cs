@@ -10,7 +10,7 @@ namespace Cafe
 {
     internal class DBConnection
     {
-        static string DBConnect = "server=localhost; user=root; password=1234; database=cafe2_db";
+        static string DBConnect = "server=localhost; user=root; password=13241324; database=cafe2_import";
         static public MySqlDataAdapter MySqlDataAdapter;
         static MySqlConnection Connection;
         static public MySqlCommand MsCommand;
@@ -31,6 +31,7 @@ namespace Cafe
             {
                 MessageBox.Show("Не ужалось подключиться к серверу!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
+                
             }
         }
         public static void Close_Open()

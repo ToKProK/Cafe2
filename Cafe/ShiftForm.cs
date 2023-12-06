@@ -12,6 +12,11 @@ namespace Cafe
 {
     public partial class ShiftForm : Form
     {
+        //string id;
+        //string surname;
+        //string name;
+        //string patronymic;
+        //string name_role;
         public ShiftForm()
         {
             InitializeComponent();
@@ -43,8 +48,17 @@ namespace Cafe
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
         {
             dataGridView2.Visible = true;
-            ShiftClass.GetPeople();
-            dataGridView2.DataSource = ShiftClass.dtShift;
+            string id_0 = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            int id_shift = int.Parse(id_0);
+            ShiftClass.GetPeople(id_shift);
+            dataGridView2.DataSource = ShiftClass.dtPeople;
+
+        }
+
+        private void button_AddShift_Click(object sender, EventArgs e)
+        {
+            ShiftAddForm form = new ShiftAddForm();
+            form.ShowDialog();
         }
     }
 }
