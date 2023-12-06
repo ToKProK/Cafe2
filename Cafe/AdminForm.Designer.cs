@@ -32,6 +32,7 @@
             this.button_Exit = new System.Windows.Forms.Button();
             this.button_account = new System.Windows.Forms.Button();
             this.button_Shift = new System.Windows.Forms.Button();
+            this.button_Ordering = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -77,11 +78,23 @@
             this.button_Shift.UseVisualStyleBackColor = true;
             this.button_Shift.Click += new System.EventHandler(this.button_Shift_Click);
             // 
+            // button_Ordering
+            // 
+            this.button_Ordering.Location = new System.Drawing.Point(15, 241);
+            this.button_Ordering.Margin = new System.Windows.Forms.Padding(6);
+            this.button_Ordering.Name = "button_Ordering";
+            this.button_Ordering.Size = new System.Drawing.Size(246, 70);
+            this.button_Ordering.TabIndex = 4;
+            this.button_Ordering.Text = "Заказы";
+            this.button_Ordering.UseVisualStyleBackColor = true;
+            this.button_Ordering.Click += new System.EventHandler(this.button_Ordering_Click);
+            // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1033, 582);
+            this.Controls.Add(this.button_Ordering);
             this.Controls.Add(this.button_Shift);
             this.Controls.Add(this.button_account);
             this.Controls.Add(this.button_Exit);
@@ -104,5 +117,6 @@
         private System.Windows.Forms.Button button_Exit;
         private System.Windows.Forms.Button button_account;
         private System.Windows.Forms.Button button_Shift;
+        private System.Windows.Forms.Button button_Ordering;
     }
 }

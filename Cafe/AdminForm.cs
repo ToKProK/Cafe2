@@ -47,5 +47,12 @@ namespace Cafe
             ShiftForm form = new ShiftForm();
             form.Show();
         }
+
+        private void button_Ordering_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            OrderingForm form = new OrderingForm();
+            form.Show();
+        }
     }
 }

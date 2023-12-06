@@ -64,26 +64,34 @@ namespace Cafe
 
         private void button_ShiftSave_Click(object sender, EventArgs e)
         {
-            ArrayList id_account = new ArrayList();
-            ArrayList role = new ArrayList();
-
-            foreach (DataGridViewRow dr in dataGridView1.Rows)
+            try
             {
-                if (dr.Cells[0].Value == null)
-                {
-                    break;
-                }
-                id_account.Add(dr.Cells[0].Value);
-                role.Add(dr.Cells[5].Value);
-            }
-            DateTime dt1 = dateTimePicker1.Value;
-            DateTime dt2 = dateTimePicker2.Value;
+                ArrayList id_account = new ArrayList();
+                ArrayList role = new ArrayList();
 
-            string VariantShift = comboBox1.SelectedValue.ToString();
-            int v1 = Convert.ToInt32(VariantShift);
-            ShiftForm.id_last_shift = ShiftForm.id_last_shift + 1;
-            ShiftClass.AddShift(dt1.ToString("yyyy-MM-dd HH:mm:ss.fff"),dt2.ToString("yyyy-MM-dd HH:mm:ss.fff"), v1, id_account, ShiftForm.id_last_shift);
-            this.Close();
+                foreach (DataGridViewRow dr in dataGridView1.Rows)
+                {
+                    if (dr.Cells[0].Value == null)
+                    {
+                        break;
+                    }
+                    id_account.Add(dr.Cells[0].Value);
+                    role.Add(dr.Cells[5].Value);
+                }
+                DateTime dt1 = dateTimePicker1.Value;
+                DateTime dt2 = dateTimePicker2.Value;
+
+                string VariantShift = comboBox1.SelectedValue.ToString();
+                int v1 = Convert.ToInt32(VariantShift);
+                ShiftForm.id_last_shift = ShiftForm.id_last_shift + 1;
+                ShiftClass.AddShift(dt1.ToString("yyyy-MM-dd HH:mm:ss.fff"), dt2.ToString("yyyy-MM-dd HH:mm:ss.fff"), v1, id_account, ShiftForm.id_last_shift);
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка при добавлении смены \n" + ex);
+            }
+            
         }
     }
 }

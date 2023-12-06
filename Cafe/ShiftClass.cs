@@ -12,16 +12,6 @@ namespace Cafe
 {
     internal class ShiftClass : DBConnection
     {
-        int id_shift;
-        //(Дневная/Ночная)
-        string Shift;
-        DateTime startShift = new DateTime(); //YYYY-MM-DD HH:MI:SS
-        DateTime endShift = new DateTime();
-        //ФИО
-        //Должность
-
-
-
         static public DataTable dtVShift = new DataTable();
         static public DataTable dtShift = new DataTable();
         static public DataTable dtPeople = new DataTable();
