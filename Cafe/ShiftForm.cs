@@ -17,6 +17,7 @@ namespace Cafe
         //string name;
         //string patronymic;
         //string name_role;
+        static public int id_last_shift;
         public ShiftForm()
         {
             InitializeComponent();

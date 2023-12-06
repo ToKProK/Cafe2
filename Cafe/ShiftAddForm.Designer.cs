@@ -38,11 +38,15 @@
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button_ShiftSave = new System.Windows.Forms.Button();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.surname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.patronymic = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name_role = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_role = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -94,7 +98,7 @@
             // 
             // button_Exit
             // 
-            this.button_Exit.Location = new System.Drawing.Point(528, 540);
+            this.button_Exit.Location = new System.Drawing.Point(1039, 540);
             this.button_Exit.Name = "button_Exit";
             this.button_Exit.Size = new System.Drawing.Size(141, 49);
             this.button_Exit.TabIndex = 6;
@@ -128,7 +132,8 @@
             this.surname,
             this.name,
             this.patronymic,
-            this.name_role});
+            this.name_role,
+            this.id_role});
             this.dataGridView1.Location = new System.Drawing.Point(20, 263);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
@@ -145,6 +150,26 @@
             this.label4.Size = new System.Drawing.Size(227, 25);
             this.label4.TabIndex = 10;
             this.label4.Text = "Выбранный персонал";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(450, 157);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(200, 84);
+            this.button2.TabIndex = 11;
+            this.button2.Text = "Добавить сотрудника";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button_ShiftSave
+            // 
+            this.button_ShiftSave.Location = new System.Drawing.Point(450, 44);
+            this.button_ShiftSave.Name = "button_ShiftSave";
+            this.button_ShiftSave.Size = new System.Drawing.Size(200, 84);
+            this.button_ShiftSave.TabIndex = 12;
+            this.button_ShiftSave.Text = "Добавить смену";
+            this.button_ShiftSave.UseVisualStyleBackColor = true;
+            this.button_ShiftSave.Click += new System.EventHandler(this.button_ShiftSave_Click);
             // 
             // id
             // 
@@ -187,11 +212,21 @@
             this.name_role.Name = "name_role";
             this.name_role.Width = 150;
             // 
+            // id_role
+            // 
+            this.id_role.HeaderText = "id_role";
+            this.id_role.MinimumWidth = 6;
+            this.id_role.Name = "id_role";
+            this.id_role.Visible = false;
+            this.id_role.Width = 125;
+            // 
             // ShiftAddForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(773, 601);
+            this.ClientSize = new System.Drawing.Size(672, 601);
+            this.Controls.Add(this.button_ShiftSave);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label3);
@@ -206,6 +241,7 @@
             this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.Name = "ShiftAddForm";
             this.Text = "Добавление смены";
+            this.Load += new System.EventHandler(this.ShiftAddForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -224,10 +260,14 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label4;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button_ShiftSave;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn surname;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn patronymic;
         private System.Windows.Forms.DataGridViewTextBoxColumn name_role;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_role;
     }
 }

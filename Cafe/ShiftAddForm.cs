@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -36,6 +37,47 @@ namespace Cafe
             comboBox1.ValueMember = "id_vshift";
             //Выбираю нужную роль через Value
             //comboBox1.SelectedValue = id_role;
+        }
+
+        private void ShiftAddForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ShiftAddPersonalForm form = new ShiftAddPersonalForm();
+            form.ShowDialog();
+            var index = this.dataGridView1.Rows.Add();
+            this.dataGridView1.Rows[index].Cells[0].Value = ShiftClass.id_add_user;
+            this.dataGridView1.Rows[index].Cells[1].Value = ShiftClass.surname_add_user;
+            this.dataGridView1.Rows[index].Cells[2].Value = ShiftClass.name_add_user;
+            this.dataGridView1.Rows[index].Cells[3].Value = ShiftClass.patronymic_add_user;
+            this.dataGridView1.Rows[index].Cells[4].Value = ShiftClass.name_role_add_user;
+            this.dataGridView1.Rows[index].Cells[5].Value = ShiftClass.id_role_add_user;
+
+        }
+
+        private void button_ShiftSave_Click(object sender, EventArgs e)
+        {
+            ArrayList id_account = new ArrayList();
+            ArrayList role = new ArrayList();
+
+            foreach (DataGridViewRow dr in dataGridView1.Rows)
+            {
+                if (dr.Cells[0].Value == null)
+                {
+                    break;
+                }
+                id_account.Add(dr.Cells[0].Value);
+                role.Add(dr.Cells[5].Value);
+            }
+            DateTime dt1 = dateTimePicker1.Value;
+            DateTime dt2 = dateTimePicker2.Value;
+
+            string VariantShift = comboBox1.SelectedValue.ToString();
+            int v1 = Convert.ToInt32(VariantShift);
+            ShiftClass.AddShift(dt1.ToString("yyyy-MM-dd HH:mm:ss.fff"),dt2.ToString("yyyy-MM-dd HH:mm:ss.fff"), v1, id_account, role);
         }
     }
 }

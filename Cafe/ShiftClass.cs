@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -69,14 +70,14 @@ namespace Cafe
 
 
         }
-        static public bool AddShift(int id_shift,string data_start, string data_end, int id_vshift, int[] array_id, int[] array_id_shift)
+        static public void AddShift(string data_start, string data_end, int id_vshift, ArrayList array_id, ArrayList array_id_shift)
         {
             string sql = $"INSERT INTO shifts VALUES(null, '{data_start}', '{data_end}', '{id_vshift}');";
-            if (array_id.Length == array_id_shift.Length) //количество id смены и количество id сотрудников должно быть одинаково.
+            if (array_id.Count == array_id_shift.Count) //количество id смены и количество id сотрудников должно быть одинаково.
             {
-                for (int i = 0; i < array_id.Length; i++)
+                for (int i = 0; i < array_id.Count; i++)
                 {
-                    string sql_insert_personal = $"INSERT INTO working_people VALUES(null, '{array_id[i]}', '{array_id_shift[id_shift]}');";
+                    string sql_insert_personal = $"INSERT INTO working_people VALUES(null, '{array_id[i]}', '{array_id_shift[i]}');";
                     sql = sql + sql_insert_personal;
                 }
             }
@@ -87,16 +88,47 @@ namespace Cafe
             MsCommand.CommandText = sql;
             if (MsCommand.ExecuteNonQuery() > 0)
             {
-                return true;
+                MessageBox.Show("Успех");
             }
             else
             {
-                return false;
+                MessageBox.Show("Провал");
             }
         }
+        //Тут будет всё для добавления пользователя.
+        public static int id_add_user;
+        public static string surname_add_user;
+        public static string name_add_user;
+        public static string patronymic_add_user;
+        public static string name_role_add_user;
+        public static string id_role_add_user;
+
+        static public DataTable dt_add_user = new DataTable();
+        static public void GetPeople_ForAddForm()
+        {
+            try
+            {
+                string sql3 = $"SELECT accounts.id, surname, name, patronymic, sp_role.name_role, sp_role.id_role FROM accounts " +
+                          $"INNER JOIN sp_role ON sp_role.id_role = accounts.id_role " +
+                          $"WHERE accounts.id_role <> 1";
+                MsCommand.CommandText = sql3;
 
 
+                MsCommand.CommandText = sql3;
+                dt_add_user.Clear();
+                MySqlDataAdapter.SelectCommand = MsCommand;
+                MySqlDataAdapter.Fill(dt_add_user);
+            }
+            catch 
+            {
+                MessageBox.Show("Ошибка");
+            }
+            
 
+
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////
         static public void GetView_shift()
         {
             MsCommand.CommandText = $"SELECT * FROM view_shift";
