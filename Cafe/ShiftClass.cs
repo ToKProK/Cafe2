@@ -70,20 +70,14 @@ namespace Cafe
 
 
         }
-        static public void AddShift(string data_start, string data_end, int id_vshift, ArrayList array_id, ArrayList array_id_shift)
+        static public void AddShift(string data_start, string data_end, int id_vshift, ArrayList array_id, int array_id_shift)
         {
             string sql = $"INSERT INTO shifts VALUES(null, '{data_start}', '{data_end}', '{id_vshift}');";
-            if (array_id.Count == array_id_shift.Count) //количество id смены и количество id сотрудников должно быть одинаково.
+
+            for (int i = 0; i < array_id.Count; i++)
             {
-                for (int i = 0; i < array_id.Count; i++)
-                {
-                    string sql_insert_personal = $"INSERT INTO working_people VALUES(null, '{array_id[i]}', '{array_id_shift[i]}');";
-                    sql = sql + sql_insert_personal;
-                }
-            }
-            else
-            {
-                MessageBox.Show("Ошибка в содрудниках смены.");
+                string sql_insert_personal = $"INSERT INTO working_people VALUES(null, '{array_id[i]}', '{array_id_shift}');";
+                sql = sql + sql_insert_personal;
             }
             MsCommand.CommandText = sql;
             if (MsCommand.ExecuteNonQuery() > 0)

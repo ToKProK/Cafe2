@@ -191,9 +191,9 @@
             // 
             // ShiftForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1206, 745);
+            this.ClientSize = new System.Drawing.Size(1206, 738);
             this.Controls.Add(this.button_AddShift);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.button_Exit);

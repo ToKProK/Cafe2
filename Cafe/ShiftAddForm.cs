@@ -48,13 +48,17 @@ namespace Cafe
         {
             ShiftAddPersonalForm form = new ShiftAddPersonalForm();
             form.ShowDialog();
-            var index = this.dataGridView1.Rows.Add();
-            this.dataGridView1.Rows[index].Cells[0].Value = ShiftClass.id_add_user;
-            this.dataGridView1.Rows[index].Cells[1].Value = ShiftClass.surname_add_user;
-            this.dataGridView1.Rows[index].Cells[2].Value = ShiftClass.name_add_user;
-            this.dataGridView1.Rows[index].Cells[3].Value = ShiftClass.patronymic_add_user;
-            this.dataGridView1.Rows[index].Cells[4].Value = ShiftClass.name_role_add_user;
-            this.dataGridView1.Rows[index].Cells[5].Value = ShiftClass.id_role_add_user;
+            //Добавляем выбранноо сторудника.
+            if (ShiftClass.surname_add_user != null && ShiftClass.name_add_user != null)
+            {
+                var index = this.dataGridView1.Rows.Add();
+                this.dataGridView1.Rows[index].Cells[0].Value = ShiftClass.id_add_user;
+                this.dataGridView1.Rows[index].Cells[1].Value = ShiftClass.surname_add_user;
+                this.dataGridView1.Rows[index].Cells[2].Value = ShiftClass.name_add_user;
+                this.dataGridView1.Rows[index].Cells[3].Value = ShiftClass.patronymic_add_user;
+                this.dataGridView1.Rows[index].Cells[4].Value = ShiftClass.name_role_add_user;
+                this.dataGridView1.Rows[index].Cells[5].Value = ShiftClass.id_role_add_user;
+            }
 
         }
 
@@ -77,7 +81,9 @@ namespace Cafe
 
             string VariantShift = comboBox1.SelectedValue.ToString();
             int v1 = Convert.ToInt32(VariantShift);
-            ShiftClass.AddShift(dt1.ToString("yyyy-MM-dd HH:mm:ss.fff"),dt2.ToString("yyyy-MM-dd HH:mm:ss.fff"), v1, id_account, role);
+            ShiftForm.id_last_shift = ShiftForm.id_last_shift + 1;
+            ShiftClass.AddShift(dt1.ToString("yyyy-MM-dd HH:mm:ss.fff"),dt2.ToString("yyyy-MM-dd HH:mm:ss.fff"), v1, id_account, ShiftForm.id_last_shift);
+            this.Close();
         }
     }
 }

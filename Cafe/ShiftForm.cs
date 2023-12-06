@@ -44,6 +44,9 @@ namespace Cafe
         private void ShiftForm_Load(object sender, EventArgs e)
         {
             DataUpdate();
+            //Получаю последний номер смены
+            Int32 index =dataGridView1.RowCount - 1;
+            id_last_shift = int.Parse(dataGridView1.Rows[index].Cells[0].Value.ToString());
         }
 
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
@@ -60,7 +63,7 @@ namespace Cafe
         {
             ShiftAddForm form = new ShiftAddForm();
             form.ShowDialog();
-
+            DataUpdate();
         }
     }
 }

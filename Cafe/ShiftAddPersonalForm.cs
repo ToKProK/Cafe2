@@ -26,11 +26,14 @@ namespace Cafe
         private void button_Back_Click(object sender, EventArgs e)
         {
             this.Close();
+            ShiftClass.surname_add_user = null;
+            ShiftClass.name_add_user = null;
         }
 
         private void button_Add_Click(object sender, EventArgs e)
         {
             //Передаём значения выбранного пользователя проррамме
+            
             string id_0 = dataGridView1.CurrentRow.Cells[0].Value.ToString();
             ShiftClass.id_add_user = int.Parse(id_0);
             ShiftClass.surname_add_user = dataGridView1.CurrentRow.Cells[1].Value.ToString();
