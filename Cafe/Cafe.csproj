@@ -96,6 +96,12 @@
       <DependentUpon>OrderingForm.cs</DependentUpon>
     </Compile>
     <Compile Include="OrderingClass.cs" />
+    <Compile Include="OrderingFullForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrderingFullForm.Designer.cs">
+      <DependentUpon>OrderingFullForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ShiftAddForm.cs">
@@ -143,6 +149,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OrderingForm.resx">
       <DependentUpon>OrderingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrderingFullForm.resx">
+      <DependentUpon>OrderingFullForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

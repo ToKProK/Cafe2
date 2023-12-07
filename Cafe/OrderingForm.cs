@@ -34,5 +34,11 @@ namespace Cafe
             OrderingClass.GetOrfering();
             dataGridView1.DataSource = OrderingClass.dtOrdering;
         }
+
+        private void dataGridView1_DoubleClick(object sender, EventArgs e)
+        {
+            OrderingFullForm form = new OrderingFullForm();
+            form.ShowDialog();
+        }
     }
 }
