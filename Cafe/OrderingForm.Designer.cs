@@ -29,16 +29,17 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button_Exit = new System.Windows.Forms.Button();
+            this.button_AddShift = new System.Windows.Forms.Button();
             this.id_ordering = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name_ordering = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.summa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.waiter = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.surname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.table = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.count_of_guests = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name_dish_status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_dish_status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button_Exit = new System.Windows.Forms.Button();
-            this.button_AddShift = new System.Windows.Forms.Button();
+            this.id_waiter = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,17 +54,38 @@
             this.id_ordering,
             this.name_ordering,
             this.summa,
-            this.waiter,
+            this.surname,
             this.table,
             this.count_of_guests,
             this.name_dish_status,
-            this.id_dish_status});
+            this.id_dish_status,
+            this.id_waiter});
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(643, 309);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
+            // 
+            // button_Exit
+            // 
+            this.button_Exit.Location = new System.Drawing.Point(514, 353);
+            this.button_Exit.Name = "button_Exit";
+            this.button_Exit.Size = new System.Drawing.Size(141, 49);
+            this.button_Exit.TabIndex = 3;
+            this.button_Exit.Text = "Выход";
+            this.button_Exit.UseVisualStyleBackColor = true;
+            this.button_Exit.Click += new System.EventHandler(this.button_Exit_Click);
+            // 
+            // button_AddShift
+            // 
+            this.button_AddShift.Location = new System.Drawing.Point(12, 353);
+            this.button_AddShift.Name = "button_AddShift";
+            this.button_AddShift.Size = new System.Drawing.Size(141, 49);
+            this.button_AddShift.TabIndex = 4;
+            this.button_AddShift.Text = "Добавить заказ";
+            this.button_AddShift.UseVisualStyleBackColor = true;
+            this.button_AddShift.Click += new System.EventHandler(this.button_AddShift_Click);
             // 
             // id_ordering
             // 
@@ -87,12 +109,12 @@
             this.summa.Name = "summa";
             this.summa.ReadOnly = true;
             // 
-            // waiter
+            // surname
             // 
-            this.waiter.DataPropertyName = "waiter";
-            this.waiter.HeaderText = "Официант";
-            this.waiter.Name = "waiter";
-            this.waiter.ReadOnly = true;
+            this.surname.DataPropertyName = "surname";
+            this.surname.HeaderText = "Официант";
+            this.surname.Name = "surname";
+            this.surname.ReadOnly = true;
             // 
             // table
             // 
@@ -114,6 +136,7 @@
             this.name_dish_status.HeaderText = "Статус заказа";
             this.name_dish_status.Name = "name_dish_status";
             this.name_dish_status.ReadOnly = true;
+            this.name_dish_status.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // id_dish_status
             // 
@@ -123,25 +146,13 @@
             this.id_dish_status.ReadOnly = true;
             this.id_dish_status.Visible = false;
             // 
-            // button_Exit
+            // id_waiter
             // 
-            this.button_Exit.Location = new System.Drawing.Point(514, 353);
-            this.button_Exit.Name = "button_Exit";
-            this.button_Exit.Size = new System.Drawing.Size(141, 49);
-            this.button_Exit.TabIndex = 3;
-            this.button_Exit.Text = "Выход";
-            this.button_Exit.UseVisualStyleBackColor = true;
-            this.button_Exit.Click += new System.EventHandler(this.button_Exit_Click);
-            // 
-            // button_AddShift
-            // 
-            this.button_AddShift.Location = new System.Drawing.Point(12, 353);
-            this.button_AddShift.Name = "button_AddShift";
-            this.button_AddShift.Size = new System.Drawing.Size(141, 49);
-            this.button_AddShift.TabIndex = 4;
-            this.button_AddShift.Text = "Добавить заказ";
-            this.button_AddShift.UseVisualStyleBackColor = true;
-            this.button_AddShift.Click += new System.EventHandler(this.button_AddShift_Click);
+            this.id_waiter.DataPropertyName = "id_waiter";
+            this.id_waiter.HeaderText = "id_waiter";
+            this.id_waiter.Name = "id_waiter";
+            this.id_waiter.ReadOnly = true;
+            this.id_waiter.Visible = false;
             // 
             // OrderingForm
             // 
@@ -164,14 +175,15 @@
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button_Exit;
+        private System.Windows.Forms.Button button_AddShift;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_ordering;
         private System.Windows.Forms.DataGridViewTextBoxColumn name_ordering;
         private System.Windows.Forms.DataGridViewTextBoxColumn summa;
-        private System.Windows.Forms.DataGridViewTextBoxColumn waiter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn surname;
         private System.Windows.Forms.DataGridViewTextBoxColumn table;
         private System.Windows.Forms.DataGridViewTextBoxColumn count_of_guests;
         private System.Windows.Forms.DataGridViewTextBoxColumn name_dish_status;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_dish_status;
-        private System.Windows.Forms.Button button_AddShift;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_waiter;
     }
 }

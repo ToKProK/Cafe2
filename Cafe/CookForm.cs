@@ -33,5 +33,12 @@ namespace Cafe
             Authorizate_Form form = new Authorizate_Form();
             form.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            OrderingForm form = new OrderingForm();
+            form.Show();
+        }
     }
 }

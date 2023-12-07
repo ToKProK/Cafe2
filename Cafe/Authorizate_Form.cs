@@ -20,7 +20,7 @@ namespace Cafe
         private void Authorizate_Load(object sender, EventArgs e)
         {
             DBConnection.ConnectorDB();
-            Clipboard.SetText("admin");
+            Clipboard.SetText("waiter");
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -39,14 +39,17 @@
             this.label5 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.button_AddMenu = new System.Windows.Forms.Button();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.button_AddOrdering = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -93,7 +96,7 @@
             // count
             // 
             this.count.DataPropertyName = "count";
-            this.count.HeaderText = "Количесвто";
+            this.count.HeaderText = "Количество";
             this.count.Name = "count";
             this.count.ReadOnly = true;
             // 
@@ -115,9 +118,9 @@
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(12, 182);
+            this.textBox5.Location = new System.Drawing.Point(15, 182);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(198, 20);
+            this.textBox5.Size = new System.Drawing.Size(195, 20);
             this.textBox5.TabIndex = 23;
             // 
             // label5
@@ -131,9 +134,9 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(12, 143);
+            this.textBox4.Location = new System.Drawing.Point(15, 143);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(198, 20);
+            this.textBox4.Size = new System.Drawing.Size(195, 20);
             this.textBox4.TabIndex = 21;
             // 
             // label4
@@ -145,13 +148,6 @@
             this.label4.TabIndex = 20;
             this.label4.Text = "Стол";
             // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(12, 103);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(198, 20);
-            this.textBox3.TabIndex = 19;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -160,13 +156,6 @@
             this.label3.Size = new System.Drawing.Size(58, 13);
             this.label3.TabIndex = 18;
             this.label3.Text = "Официант";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(12, 64);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(198, 20);
-            this.textBox2.TabIndex = 17;
             // 
             // label2
             // 
@@ -179,9 +168,9 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 25);
+            this.textBox1.Location = new System.Drawing.Point(15, 25);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(198, 20);
+            this.textBox1.Size = new System.Drawing.Size(195, 20);
             this.textBox1.TabIndex = 15;
             // 
             // label1
@@ -197,16 +186,61 @@
             // 
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(12, 221);
+            this.comboBox1.Location = new System.Drawing.Point(15, 221);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(198, 21);
+            this.comboBox1.Size = new System.Drawing.Size(195, 21);
             this.comboBox1.TabIndex = 27;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(15, 103);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(195, 21);
+            this.comboBox2.TabIndex = 28;
+            // 
+            // button_AddMenu
+            // 
+            this.button_AddMenu.Location = new System.Drawing.Point(324, 200);
+            this.button_AddMenu.Name = "button_AddMenu";
+            this.button_AddMenu.Size = new System.Drawing.Size(135, 60);
+            this.button_AddMenu.TabIndex = 29;
+            this.button_AddMenu.Text = "Добавить блюдо";
+            this.button_AddMenu.UseVisualStyleBackColor = true;
+            this.button_AddMenu.Click += new System.EventHandler(this.button_AddMenu_Click);
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(15, 64);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(195, 20);
+            this.numericUpDown1.TabIndex = 30;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // button_AddOrdering
+            // 
+            this.button_AddOrdering.Location = new System.Drawing.Point(324, 102);
+            this.button_AddOrdering.Name = "button_AddOrdering";
+            this.button_AddOrdering.Size = new System.Drawing.Size(135, 60);
+            this.button_AddOrdering.TabIndex = 31;
+            this.button_AddOrdering.Text = "Добавить заказ";
+            this.button_AddOrdering.UseVisualStyleBackColor = true;
+            this.button_AddOrdering.Click += new System.EventHandler(this.button_AddOrdering_Click);
             // 
             // OrderingFullAddForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(473, 526);
+            this.Controls.Add(this.button_AddOrdering);
+            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.button_AddMenu);
+            this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label6);
@@ -214,15 +248,14 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox3);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Name = "OrderingFullAddForm";
             this.Text = "OrderingFullAddForm";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -230,22 +263,24 @@
 
         #endregion
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_dish;
-        private System.Windows.Forms.DataGridViewTextBoxColumn name_dish;
-        private System.Windows.Forms.DataGridViewTextBoxColumn price;
-        private System.Windows.Forms.DataGridViewTextBoxColumn count;
-        private System.Windows.Forms.DataGridViewTextBoxColumn summa_dish;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Button button_AddMenu;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_dish;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name_dish;
+        private System.Windows.Forms.DataGridViewTextBoxColumn price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn count;
+        private System.Windows.Forms.DataGridViewTextBoxColumn summa_dish;
+        private System.Windows.Forms.Button button_AddOrdering;
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySqlX.XDevAPI.Relational;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -31,7 +32,13 @@ namespace Cafe
                 WaiterForm form = new WaiterForm();
                 form.Show();
             }
+            if (Authorization.Role == "Повар")
+            {
+                this.Hide();
+                CookForm form = new CookForm();
+                form.Show();
 
+            }
         }
 
         private void OrderingForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -43,11 +50,16 @@ namespace Cafe
         {
             OrderingClass.GetOrfering();
             dataGridView1.DataSource = OrderingClass.dtOrdering;
+
             if (Authorization.Role == "Администратор")
             {
                 button_AddShift.Visible = false;
             }
             if (Authorization.Role == "Официант")
+            {
+                button_AddShift.Visible = true;
+            }
+            if (Authorization.Role == "Повар")
             {
                 button_AddShift.Visible = true;
             }
@@ -59,12 +71,13 @@ namespace Cafe
             int id_ordering = int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString());
             string name_ordering = dataGridView1.CurrentRow.Cells[1].Value.ToString();
             int summa = int.Parse(dataGridView1.CurrentRow.Cells[2].Value.ToString());
-            string waiter = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-            string table = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-            int count_of_guests = int.Parse(dataGridView1.CurrentRow.Cells[5].Value.ToString());
-            int id_dish_status = int.Parse(dataGridView1.CurrentRow.Cells[6].Value.ToString());
-            string name_dish_status = dataGridView1.CurrentRow.Cells[7].Value.ToString();
-            OrderingFullForm form = new OrderingFullForm(id_ordering, name_ordering, summa, waiter, table, count_of_guests,id_dish_status,name_dish_status);
+            string id_waiter = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+            string name_waiter = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+            string table = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+            int count_of_guests = int.Parse(dataGridView1.CurrentRow.Cells[6].Value.ToString());
+            int id_dish_status = int.Parse(dataGridView1.CurrentRow.Cells[7].Value.ToString());
+            string name_dish_status = dataGridView1.CurrentRow.Cells[8].Value.ToString();
+            OrderingFullForm form = new OrderingFullForm(id_ordering, name_ordering, summa, name_waiter, table, count_of_guests,id_dish_status,name_dish_status);
             form.ShowDialog();
         }
 

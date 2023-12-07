@@ -48,7 +48,7 @@ namespace Cafe
         {
             ShiftAddPersonalForm form = new ShiftAddPersonalForm();
             form.ShowDialog();
-            //Добавляем выбранноо сторудника.
+            //Добавляем выбранного сторудника.
             if (ShiftClass.surname_add_user != null && ShiftClass.name_add_user != null)
             {
                 var index = this.dataGridView1.Rows.Add();
