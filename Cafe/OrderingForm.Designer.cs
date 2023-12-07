@@ -38,6 +38,7 @@
             this.name_dish_status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_dish_status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button_Exit = new System.Windows.Forms.Button();
+            this.button_AddShift = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -132,11 +133,22 @@
             this.button_Exit.UseVisualStyleBackColor = true;
             this.button_Exit.Click += new System.EventHandler(this.button_Exit_Click);
             // 
+            // button_AddShift
+            // 
+            this.button_AddShift.Location = new System.Drawing.Point(12, 353);
+            this.button_AddShift.Name = "button_AddShift";
+            this.button_AddShift.Size = new System.Drawing.Size(141, 49);
+            this.button_AddShift.TabIndex = 4;
+            this.button_AddShift.Text = "Добавить заказ";
+            this.button_AddShift.UseVisualStyleBackColor = true;
+            this.button_AddShift.Click += new System.EventHandler(this.button_AddShift_Click);
+            // 
             // OrderingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(665, 416);
+            this.Controls.Add(this.button_AddShift);
             this.Controls.Add(this.button_Exit);
             this.Controls.Add(this.dataGridView1);
             this.Name = "OrderingForm";
@@ -160,5 +172,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn count_of_guests;
         private System.Windows.Forms.DataGridViewTextBoxColumn name_dish_status;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_dish_status;
+        private System.Windows.Forms.Button button_AddShift;
     }
 }

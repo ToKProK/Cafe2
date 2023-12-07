@@ -62,5 +62,9 @@ namespace Cafe
             MySqlDataAdapter.SelectCommand= MsCommand;
             MySqlDataAdapter.Fill(dtOrderingFull);
         }
+        public static void AddOrfering()
+        {
+            string sql = $"INSERT INTO ";
+        }
     }
 }

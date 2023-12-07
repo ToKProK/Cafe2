@@ -19,9 +19,19 @@ namespace Cafe
 
         private void button_Exit_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            AdminForm form = new AdminForm();
-            form.Show();
+            if (Authorization.Role == "Администратор")
+            {
+                this.Hide();
+                AdminForm form = new AdminForm();
+                form.Show();
+            }
+            if (Authorization.Role == "Официант")
+            {
+                this.Hide();
+                WaiterForm form = new WaiterForm();
+                form.Show();
+            }
+
         }
 
         private void OrderingForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -33,6 +43,14 @@ namespace Cafe
         {
             OrderingClass.GetOrfering();
             dataGridView1.DataSource = OrderingClass.dtOrdering;
+            if (Authorization.Role == "Администратор")
+            {
+                button_AddShift.Visible = false;
+            }
+            if (Authorization.Role == "Официант")
+            {
+                button_AddShift.Visible = true;
+            }
         }
 
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
@@ -47,6 +65,12 @@ namespace Cafe
             int id_dish_status = int.Parse(dataGridView1.CurrentRow.Cells[6].Value.ToString());
             string name_dish_status = dataGridView1.CurrentRow.Cells[7].Value.ToString();
             OrderingFullForm form = new OrderingFullForm(id_ordering, name_ordering, summa, waiter, table, count_of_guests,id_dish_status,name_dish_status);
+            form.ShowDialog();
+        }
+
+        private void button_AddShift_Click(object sender, EventArgs e)
+        {
+            OrderingFullAddForm form = new OrderingFullAddForm();
             form.ShowDialog();
         }
     }
