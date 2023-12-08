@@ -38,10 +38,10 @@ namespace Cafe
             MySqlDataAdapter.SelectCommand = MsCommand;
             MySqlDataAdapter.Fill(dtOrdering);
         }
-        public static void GetOrferingFull()
+        public static void GetOrferingFull(int id_select_ordering)
         {
-            MsCommand.CommandText = $"SELECT menu.id_dish, menu.name_dish, menu.price, menu_and_ordering.count, menu_and_ordering.summa_dish FROM menu, ordering " +
-                                    "INNER JOIN menu_and_ordering ON menu_and_ordering.id_ordering = ordering.id_ordering AND id_dish = menu_and_ordering.id_dish";
+            MsCommand.CommandText = $"SELECT menu.id_dish, menu.name_dish, menu.price, menu_and_ordering.count , menu_and_ordering.summa_dish FROM menu, ordering, menu_and_ordering WHERE menu_and_ordering.id_ordering = ordering.id_ordering AND menu.id_dish = menu_and_ordering.id_dish AND menu_and_ordering.id_ordering = '{id_select_ordering}';";
+
 
 
             //Почему-то выдаёт ошибку(из-зи ссылки на таблицу в конце menu.id_dish, почему незнаю.)
@@ -78,7 +78,7 @@ namespace Cafe
         public static DataTable dtShiftStatus = new DataTable();
         public static void GetDataWaiter()
         {
-            MsCommand.CommandText = $"SELECT surname, id_role FROM accounts " +
+            MsCommand.CommandText = $"SELECT surname, id FROM accounts " +
                                     $"WHERE accounts.id_role = 3 ";
             dtRoleForWaiter.Clear();
             MySqlDataAdapter.SelectCommand = MsCommand;

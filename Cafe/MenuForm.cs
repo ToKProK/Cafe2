@@ -21,6 +21,7 @@ namespace Cafe
         public static int price_add;
         public static int count;
         public static int sum;
+        bool add_button = false;
         private void MenuForm_Load(object sender, EventArgs e)
         {
             OrderingClass.GetMenu();
@@ -35,6 +36,21 @@ namespace Cafe
             price_add = int.Parse(dataGridView1.CurrentRow.Cells[2].Value.ToString());
             count = Convert.ToInt32(Math.Round(numericUpDown1.Value, 0));
             sum = count * price_add;
+            add_button = true;
+            this.Close();
+        }
+
+        private void MenuForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if(add_button == false)
+            {
+                name_dish_add = null;
+            }
+            
+        }
+
+        private void button_Back_Click(object sender, EventArgs e)
+        {
             this.Close();
         }
     }

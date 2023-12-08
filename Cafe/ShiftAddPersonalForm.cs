@@ -16,7 +16,7 @@ namespace Cafe
         {
             InitializeComponent();
         }
-
+        bool add_button = false;
         private void ShiftAddPersonalForm_Load(object sender, EventArgs e)
         {
             ShiftClass.GetPeople_ForAddForm();
@@ -26,8 +26,6 @@ namespace Cafe
         private void button_Back_Click(object sender, EventArgs e)
         {
             this.Close();
-            ShiftClass.surname_add_user = null;
-            ShiftClass.name_add_user = null;
         }
 
         private void button_Add_Click(object sender, EventArgs e)
@@ -40,7 +38,17 @@ namespace Cafe
             ShiftClass.patronymic_add_user = dataGridView1.CurrentRow.Cells[3].Value.ToString();
             ShiftClass.name_role_add_user = dataGridView1.CurrentRow.Cells[4].Value.ToString();
             ShiftClass.id_role_add_user = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+            add_button = true;
             this.Close();
+        }
+
+        private void ShiftAddPersonalForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (add_button == false)
+            {
+                ShiftClass.surname_add_user = null;
+                ShiftClass.name_add_user = null;
+            }
         }
     }
 }

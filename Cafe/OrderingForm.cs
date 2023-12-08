@@ -13,6 +13,7 @@ namespace Cafe
 {
     public partial class OrderingForm : Form
     {
+        public static int id_last_ordering;
         public OrderingForm()
         {
             InitializeComponent();
@@ -63,8 +64,10 @@ namespace Cafe
             {
                 button_AddShift.Visible = true;
             }
+            Int32 index = dataGridView1.RowCount - 1;
+            id_last_ordering = int.Parse(dataGridView1.Rows[index].Cells[0].Value.ToString());
         }
-
+        public static int id_ordering_select;
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
         {
             //int id_ordering, string name_ordering, int summa, string waiter, string table, int count_of_guests, int id_dish_status, string name_dish_status
@@ -85,6 +88,8 @@ namespace Cafe
         {
             OrderingFullAddForm form = new OrderingFullAddForm();
             form.ShowDialog();
+            OrderingClass.GetOrfering();
+            dataGridView1.DataSource = OrderingClass.dtOrdering;
         }
     }
 }
