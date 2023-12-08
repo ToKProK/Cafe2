@@ -37,16 +37,18 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(44, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "label1";
             // 
             // button_Exit
             // 
-            this.button_Exit.Location = new System.Drawing.Point(647, 389);
+            this.button_Exit.Location = new System.Drawing.Point(233, 251);
+            this.button_Exit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button_Exit.Name = "button_Exit";
-            this.button_Exit.Size = new System.Drawing.Size(141, 49);
+            this.button_Exit.Size = new System.Drawing.Size(188, 60);
             this.button_Exit.TabIndex = 2;
             this.button_Exit.Text = "Выход";
             this.button_Exit.UseVisualStyleBackColor = true;
@@ -54,9 +56,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 63);
+            this.button1.Location = new System.Drawing.Point(13, 40);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(202, 75);
+            this.button1.Size = new System.Drawing.Size(269, 92);
             this.button1.TabIndex = 4;
             this.button1.Text = "Заказы";
             this.button1.UseVisualStyleBackColor = true;
@@ -64,12 +67,13 @@
             // 
             // CookForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(434, 324);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button_Exit);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "CookForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Повар";

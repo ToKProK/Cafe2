@@ -45,8 +45,51 @@ namespace Cafe
             textBox3.Text = waiter;
             textBox4.Text = table;
             textBox5.Text = summa.ToString();
-            textBox6.Text = name_dish_status;
+            LoadCombobox_ShiftStatus();
             DataUpdate();
+            //У админа нет кнопки по сохранению изменений
+            if (Authorization.Role == "Администратор")
+            {
+                button_edit.Visible = false;
+            }
+            else
+            {
+                button_edit.Visible = true;
+            }
+        }
+        private void LoadCombobox_ShiftStatus()
+        {
+            //Добавляем в комбобокс значение, которое уже было присвоено раньше данному заказу
+            if (Authorization.Role == "Администратор")
+            {
+                comboBox1.Items.Add(name_dish_status);
+                comboBox1.SelectedIndex = 0;
+            }
+            else //Заполняем массив combobox данными в зависимости от должности.
+            {
+                OrderingClass.GetDataShiftStatus();
+                comboBox1.DataSource = OrderingClass.dtShiftStatus;
+                comboBox1.DisplayMember = "name_dish_status";
+                comboBox1.ValueMember = "id_dish_status";
+            }
+
+            
+
+        }
+
+        private void button_edit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                id_dish_status = int.Parse(comboBox1.SelectedValue.ToString());
+                OrderingClass.EditStatusDish(id_ordering, id_dish_status);
+                this.Close();
+            }
+            catch 
+            {
+                MessageBox.Show("Ошибка");
+            }
+            
         }
     }
 }

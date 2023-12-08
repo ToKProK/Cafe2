@@ -191,7 +191,7 @@
             // 
             // ShiftForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1206, 738);
             this.Controls.Add(this.button_AddShift);
@@ -201,6 +201,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "ShiftForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Смены";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ShiftForm_FormClosing);
             this.Load += new System.EventHandler(this.ShiftForm_Load);

@@ -82,6 +82,8 @@ namespace Cafe
             string name_dish_status = dataGridView1.CurrentRow.Cells[8].Value.ToString();
             OrderingFullForm form = new OrderingFullForm(id_ordering, name_ordering, summa, name_waiter, table, count_of_guests,id_dish_status,name_dish_status);
             form.ShowDialog();
+            OrderingClass.GetOrfering();
+            dataGridView1.DataSource = OrderingClass.dtOrdering;
         }
 
         private void button_AddShift_Click(object sender, EventArgs e)

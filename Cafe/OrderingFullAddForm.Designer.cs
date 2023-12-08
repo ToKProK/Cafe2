@@ -66,11 +66,11 @@
             this.count,
             this.summa_dish});
             this.dataGridView1.Location = new System.Drawing.Point(20, 342);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(592, 293);
+            this.dataGridView1.Size = new System.Drawing.Size(739, 293);
             this.dataGridView1.TabIndex = 25;
             // 
             // id_dish
@@ -132,8 +132,9 @@
             // textBox5
             // 
             this.textBox5.Location = new System.Drawing.Point(20, 224);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(4);
             this.textBox5.Name = "textBox5";
+            this.textBox5.ReadOnly = true;
             this.textBox5.Size = new System.Drawing.Size(259, 22);
             this.textBox5.TabIndex = 23;
             // 
@@ -150,7 +151,7 @@
             // textBox4
             // 
             this.textBox4.Location = new System.Drawing.Point(20, 176);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(4);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(259, 22);
             this.textBox4.TabIndex = 21;
@@ -188,7 +189,7 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(20, 31);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(259, 22);
             this.textBox1.TabIndex = 15;
@@ -209,7 +210,7 @@
             this.comboBox1.Enabled = false;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(20, 272);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(259, 24);
             this.comboBox1.TabIndex = 27;
@@ -219,7 +220,7 @@
             this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(20, 127);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(259, 24);
             this.comboBox2.TabIndex = 28;
@@ -227,7 +228,7 @@
             // button_AddMenu
             // 
             this.button_AddMenu.Location = new System.Drawing.Point(432, 246);
-            this.button_AddMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button_AddMenu.Margin = new System.Windows.Forms.Padding(4);
             this.button_AddMenu.Name = "button_AddMenu";
             this.button_AddMenu.Size = new System.Drawing.Size(180, 74);
             this.button_AddMenu.TabIndex = 29;
@@ -238,7 +239,7 @@
             // numericUpDown1
             // 
             this.numericUpDown1.Location = new System.Drawing.Point(20, 79);
-            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(4);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(260, 22);
             this.numericUpDown1.TabIndex = 30;
@@ -251,7 +252,7 @@
             // button_AddOrdering
             // 
             this.button_AddOrdering.Location = new System.Drawing.Point(432, 126);
-            this.button_AddOrdering.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button_AddOrdering.Margin = new System.Windows.Forms.Padding(4);
             this.button_AddOrdering.Name = "button_AddOrdering";
             this.button_AddOrdering.Size = new System.Drawing.Size(180, 74);
             this.button_AddOrdering.TabIndex = 31;
@@ -263,7 +264,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(631, 647);
+            this.ClientSize = new System.Drawing.Size(767, 650);
             this.Controls.Add(this.button_AddOrdering);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.button_AddMenu);
@@ -279,9 +280,10 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "OrderingFullAddForm";
-            this.Text = "OrderingFullAddForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Добавить заказ";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);

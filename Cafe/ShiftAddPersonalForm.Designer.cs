@@ -136,7 +136,8 @@
             this.Controls.Add(this.button_Add);
             this.Controls.Add(this.dataGridView1);
             this.Name = "ShiftAddPersonalForm";
-            this.Text = "ShiftAddPersonalForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Добавления сотрудника";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ShiftAddPersonalForm_FormClosing);
             this.Load += new System.EventHandler(this.ShiftAddPersonalForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

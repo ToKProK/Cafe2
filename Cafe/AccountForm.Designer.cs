@@ -223,6 +223,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "AccountForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Панель управления пользователями";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AccountForm_FormClosing);
             this.Load += new System.EventHandler(this.AccountForm_Load);

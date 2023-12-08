@@ -48,7 +48,7 @@
             this.name_dish,
             this.price});
             this.dataGridView1.Location = new System.Drawing.Point(16, 15);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(525, 423);
@@ -83,7 +83,7 @@
             // 
             this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.numericUpDown1.Location = new System.Drawing.Point(16, 474);
-            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(4);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(160, 30);
             this.numericUpDown1.TabIndex = 1;
@@ -96,7 +96,7 @@
             // button_Add
             // 
             this.button_Add.Location = new System.Drawing.Point(388, 450);
-            this.button_Add.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button_Add.Margin = new System.Windows.Forms.Padding(4);
             this.button_Add.Name = "button_Add";
             this.button_Add.Size = new System.Drawing.Size(153, 80);
             this.button_Add.TabIndex = 2;
@@ -136,9 +136,10 @@
             this.Controls.Add(this.button_Add);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.dataGridView1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MenuForm";
-            this.Text = "MenuForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Меню";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MenuForm_FormClosing);
             this.Load += new System.EventHandler(this.MenuForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

@@ -73,6 +73,27 @@ namespace Cafe
             }
         }
 
+        public static bool EditStatusDish(int id_ordering, int id_dish_status)
+        {
+            try
+            {
+                MsCommand.CommandText = $"UPDATE ordering SET id_dish_status = '{id_dish_status}' " +
+                                        $"WHERE ordering.id_ordering = '{id_ordering}' ";
+                if (MsCommand.ExecuteNonQuery() > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Ошибка в изменении статуса", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            } 
+        }
 
         public static DataTable dtRoleForWaiter = new DataTable();
         public static DataTable dtShiftStatus = new DataTable();
