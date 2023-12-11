@@ -33,6 +33,7 @@
             this.button_account = new System.Windows.Forms.Button();
             this.button_Shift = new System.Windows.Forms.Button();
             this.button_Ordering = new System.Windows.Forms.Button();
+            this.button_Test = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -84,11 +85,22 @@
             this.button_Ordering.UseVisualStyleBackColor = true;
             this.button_Ordering.Click += new System.EventHandler(this.button_Ordering_Click);
             // 
+            // button_Test
+            // 
+            this.button_Test.Location = new System.Drawing.Point(246, 38);
+            this.button_Test.Name = "button_Test";
+            this.button_Test.Size = new System.Drawing.Size(120, 70);
+            this.button_Test.TabIndex = 5;
+            this.button_Test.Text = "Тестирование ПО";
+            this.button_Test.UseVisualStyleBackColor = true;
+            this.button_Test.Click += new System.EventHandler(this.button_Test_Click_1);
+            // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(378, 324);
+            this.Controls.Add(this.button_Test);
             this.Controls.Add(this.button_Ordering);
             this.Controls.Add(this.button_Shift);
             this.Controls.Add(this.button_account);
@@ -112,5 +124,6 @@
         private System.Windows.Forms.Button button_account;
         private System.Windows.Forms.Button button_Shift;
         private System.Windows.Forms.Button button_Ordering;
+        private System.Windows.Forms.Button button_Test;
     }
 }

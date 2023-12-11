@@ -90,15 +90,17 @@ namespace Cafe
             }
             
         }
-        static public void DeleteAccount(int id)
+        static public bool DeleteAccount(int id)
         {
             try
             {
                 MsCommand.CommandText = $"DELETE FROM accounts WHERE id = {id}";
                 MsCommand.ExecuteNonQuery();
+                return true;
             }
             catch
             {
+                return false;
                 MessageBox.Show("Ошибка при удалении!");
             }
         }

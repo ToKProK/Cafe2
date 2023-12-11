@@ -54,5 +54,12 @@ namespace Cafe
             OrderingForm form = new OrderingForm();
             form.Show();
         }
+
+        private void button_Test_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            TestForm form = new TestForm();
+            form.Show();
+        }
     }
 }
