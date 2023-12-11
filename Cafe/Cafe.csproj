@@ -50,23 +50,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AccountAddModalForm.cs">
+    <Compile Include="Account\AccountAddModalForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AccountAddModalForm.Designer.cs">
+    <Compile Include="Account\AccountAddModalForm.Designer.cs">
       <DependentUpon>AccountAddModalForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="AccountClass.cs" />
-    <Compile Include="AccountEditModalForm.cs">
+    <Compile Include="Account\AccountClass.cs" />
+    <Compile Include="Account\AccountEditModalForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AccountEditModalForm.Designer.cs">
+    <Compile Include="Account\AccountEditModalForm.Designer.cs">
       <DependentUpon>AccountEditModalForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="AccountForm.cs">
+    <Compile Include="Account\AccountForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AccountForm.Designer.cs">
+    <Compile Include="Account\AccountForm.Designer.cs">
       <DependentUpon>AccountForm.cs</DependentUpon>
     </Compile>
     <Compile Include="AdminForm.cs">
@@ -75,7 +75,7 @@
     <Compile Include="AdminForm.Designer.cs">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Authorization.cs" />
+    <Compile Include="Authorization\Authorization.cs" />
     <Compile Include="CookForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,56 +83,56 @@
       <DependentUpon>CookForm.cs</DependentUpon>
     </Compile>
     <Compile Include="DBConnection.cs" />
-    <Compile Include="Authorizate_Form.cs">
+    <Compile Include="Authorization\Authorizate_Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Authorizate_Form.Designer.cs">
+    <Compile Include="Authorization\Authorizate_Form.Designer.cs">
       <DependentUpon>Authorizate_Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="MenuForm.cs">
+    <Compile Include="Ordering\MenuForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MenuForm.Designer.cs">
+    <Compile Include="Ordering\MenuForm.Designer.cs">
       <DependentUpon>MenuForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="OrderingForm.cs">
+    <Compile Include="Ordering\OrderingForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OrderingForm.Designer.cs">
+    <Compile Include="Ordering\OrderingForm.Designer.cs">
       <DependentUpon>OrderingForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="OrderingClass.cs" />
-    <Compile Include="OrderingFullAddForm.cs">
+    <Compile Include="Ordering\OrderingClass.cs" />
+    <Compile Include="Ordering\OrderingFullAddForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OrderingFullAddForm.Designer.cs">
+    <Compile Include="Ordering\OrderingFullAddForm.Designer.cs">
       <DependentUpon>OrderingFullAddForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="OrderingFullForm.cs">
+    <Compile Include="Ordering\OrderingFullForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OrderingFullForm.Designer.cs">
+    <Compile Include="Ordering\OrderingFullForm.Designer.cs">
       <DependentUpon>OrderingFullForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ShiftAddForm.cs">
+    <Compile Include="Shift\ShiftAddForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ShiftAddForm.Designer.cs">
+    <Compile Include="Shift\ShiftAddForm.Designer.cs">
       <DependentUpon>ShiftAddForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ShiftAddPersonalForm.cs">
+    <Compile Include="Shift\ShiftAddPersonalForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ShiftAddPersonalForm.Designer.cs">
+    <Compile Include="Shift\ShiftAddPersonalForm.Designer.cs">
       <DependentUpon>ShiftAddPersonalForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ShiftClass.cs" />
-    <Compile Include="ShiftForm.cs">
+    <Compile Include="Shift\ShiftClass.cs" />
+    <Compile Include="Shift\ShiftForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ShiftForm.Designer.cs">
+    <Compile Include="Shift\ShiftForm.Designer.cs">
       <DependentUpon>ShiftForm.cs</DependentUpon>
     </Compile>
     <Compile Include="WaiterForm.cs">
@@ -141,34 +141,34 @@
     <Compile Include="WaiterForm.Designer.cs">
       <DependentUpon>WaiterForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AccountAddModalForm.resx">
+    <EmbeddedResource Include="Account\AccountAddModalForm.resx">
       <DependentUpon>AccountAddModalForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AccountEditModalForm.resx">
+    <EmbeddedResource Include="Account\AccountEditModalForm.resx">
       <DependentUpon>AccountEditModalForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AccountForm.resx">
+    <EmbeddedResource Include="Account\AccountForm.resx">
       <DependentUpon>AccountForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Authorizate_Form.resx">
+    <EmbeddedResource Include="Authorization\Authorizate_Form.resx">
       <DependentUpon>Authorizate_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CookForm.resx">
       <DependentUpon>CookForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MenuForm.resx">
+    <EmbeddedResource Include="Ordering\MenuForm.resx">
       <DependentUpon>MenuForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OrderingForm.resx">
+    <EmbeddedResource Include="Ordering\OrderingForm.resx">
       <DependentUpon>OrderingForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OrderingFullAddForm.resx">
+    <EmbeddedResource Include="Ordering\OrderingFullAddForm.resx">
       <DependentUpon>OrderingFullAddForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OrderingFullForm.resx">
+    <EmbeddedResource Include="Ordering\OrderingFullForm.resx">
       <DependentUpon>OrderingFullForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -180,13 +180,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ShiftAddForm.resx">
+    <EmbeddedResource Include="Shift\ShiftAddForm.resx">
       <DependentUpon>ShiftAddForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ShiftAddPersonalForm.resx">
+    <EmbeddedResource Include="Shift\ShiftAddPersonalForm.resx">
       <DependentUpon>ShiftAddPersonalForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ShiftForm.resx">
+    <EmbeddedResource Include="Shift\ShiftForm.resx">
       <DependentUpon>ShiftForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WaiterForm.resx">
