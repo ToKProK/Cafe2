@@ -29,26 +29,26 @@ namespace Cafe
             if (DBConnection.ConnectorDB())
             {
                 checkBox_Connection.Checked = true;
-                progressBar1.Value = progressBar1.Value + 10;
+                progressBar1.Value = progressBar1.Value + 25;
             }
             else { checkBox_Connection.Checked = false; ErrorBox(checkBox_Connection.Text); }
             if (AccountClass.AddAccount(login, password, surname, name, otchestv, id_role, id_status))
             {
                 checkBox_AddUser.Checked = true;
-                progressBar1.Value = progressBar1.Value + 10;
+                progressBar1.Value = progressBar1.Value + 25;
             }
             else { checkBox_AddUser.Checked = false; ErrorBox(checkBox_AddUser.Text); }
             GetIdNewAccount(login);
             if (AccountClass.EditAccount(id_new_user, login + "123", password + "123", surname + "312", name + "213", otchestv + "31", 2, 2))
             {
                 checkBox_EditUser.Checked = true;
-                progressBar1.Value = progressBar1.Value + 10;
+                progressBar1.Value = progressBar1.Value + 25;
             }
             else { checkBox_EditUser.Checked = false; ErrorBox(checkBox_EditUser.Text); }
             if (AccountClass.DeleteAccount(id_new_user))
             {
                 checkBox_DeleteUser.Checked = true;
-                progressBar1.Value = progressBar1.Value + 10;
+                progressBar1.Value = progressBar1.Value + 25;
             }
             else { checkBox_DeleteUser.Checked = false; ErrorBox(checkBox_DeleteUser.Text); } 
         }
@@ -70,6 +70,13 @@ namespace Cafe
                 string id = result.ToString();
                 id_new_user = int.Parse(id);
             }
+        }
+
+        private void button_Exit_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AdminForm form = new AdminForm();
+            form.Show();
         }
     }
 }

@@ -45,8 +45,8 @@
             // 
             // button_Exit
             // 
-            this.button_Exit.Location = new System.Drawing.Point(177, 251);
-            this.button_Exit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button_Exit.Location = new System.Drawing.Point(177, 253);
+            this.button_Exit.Margin = new System.Windows.Forms.Padding(4);
             this.button_Exit.Name = "button_Exit";
             this.button_Exit.Size = new System.Drawing.Size(188, 60);
             this.button_Exit.TabIndex = 2;
@@ -57,7 +57,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(13, 40);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(269, 92);
             this.button1.TabIndex = 3;
@@ -73,7 +73,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button_Exit);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "WaiterForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Официант";
